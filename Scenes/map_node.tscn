@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b3vku6njm2sh4"]
+
+[ext_resource type="Script" uid="uid://ckee2p684jegf" path="res://Scripts/map_node.gd" id="1_wp7i3"]
+
+[node name="MapNode" type="Node2D" unique_id=1197352910]
+script = ExtResource("1_wp7i3")
+
+[node name="Button" type="Button" parent="." unique_id=2052964384]
+offset_right = 54.0
+offset_bottom = 52.0
+
+[node name="Label" type="Label" parent="." unique_id=1667671122]
+offset_top = 29.0
+offset_right = 53.0
+offset_bottom = 52.0
+text = "Node"
+horizontal_alignment = 1
+vertical_alignment = 1

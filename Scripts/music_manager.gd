@@ -4,6 +4,7 @@ var music_player
 
 func _ready():
 	music_player = AudioStreamPlayer.new()
+	music_player.bus = "Music"
 	add_child(music_player)
 
 func play_music(stream):
