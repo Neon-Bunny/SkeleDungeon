@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dwl8715wkrwbw"]
+
+[ext_resource type="Texture2D" uid="uid://cpxubukdolyim" path="res://Assets/Images/SigmaDungeon.jpg" id="1_4tmxy"]
+[ext_resource type="FontFile" uid="uid://b5apgcy56mli5" path="res://Assets/Fonts/Jersey_10/Jersey10-Regular.ttf" id="1_prnvy"]
+[ext_resource type="Script" uid="uid://cqv6un326h585" path="res://Scripts/options.gd" id="1_qyyw6"]
+[ext_resource type="Script" uid="uid://b8sr10ylei2i7" path="res://Scripts/audio_slider.gd" id="4_ww8vx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ww8vx"]
+bg_color = Color(0, 0, 0, 0.3137255)
+
+[node name="Options" type="Node2D" unique_id=1348864025]
+script = ExtResource("1_qyyw6")
+
+[node name="SigmaDungeon" type="Sprite2D" parent="." unique_id=1491978936]
+position = Vector2(576, 323)
+scale = Vector2(0.48, 0.4821959)
+texture = ExtResource("1_4tmxy")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=1215015154]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -4.0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="Return" type="Button" parent="ButtonManager" unique_id=377138143]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 479.0
+offset_right = 705.0
+offset_bottom = 555.0
+theme_override_fonts/font = ExtResource("1_prnvy")
+theme_override_font_sizes/font_size = 30
+text = "Return"
+
+[node name="Master Label" type="Label" parent="." unique_id=139800764]
+offset_left = 432.0
+offset_top = 125.0
+offset_right = 712.0
+offset_bottom = 223.0
+theme_override_fonts/font = ExtResource("1_prnvy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ww8vx")
+text = "Master Volume
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Master Slider" type="HSlider" parent="." unique_id=1591338385]
+offset_left = 437.0
+offset_top = 173.0
+offset_right = 703.0
+offset_bottom = 236.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_ww8vx")
+bus_name = "Master"
+
+[node name="Music Label" type="Label" parent="." unique_id=403092690]
+offset_left = 432.0
+offset_top = 245.0
+offset_right = 713.0
+offset_bottom = 343.0
+theme_override_fonts/font = ExtResource("1_prnvy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ww8vx")
+text = "Music Volume
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music Slider" type="HSlider" parent="." unique_id=1796992500]
+offset_left = 437.0
+offset_top = 292.0
+offset_right = 703.0
+offset_bottom = 355.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_ww8vx")
+bus_name = "Music"
+
+[node name="SFX Label2" type="Label" parent="." unique_id=512951034]
+offset_left = 432.0
+offset_top = 359.0
+offset_right = 713.0
+offset_bottom = 467.0
+theme_override_fonts/font = ExtResource("1_prnvy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ww8vx")
+text = "SFX Volume
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX Slider" type="HSlider" parent="." unique_id=340711079]
+offset_left = 436.0
+offset_top = 411.0
+offset_right = 702.0
+offset_bottom = 474.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_ww8vx")
+bus_name = "SFX"
+
+[connection signal="pressed" from="ButtonManager/Return" to="." method="_on_return_pressed"]

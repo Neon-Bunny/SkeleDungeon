@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ckxvx84n7tkhk"]
+
+[ext_resource type="Script" uid="uid://cqmh0iapaoj0h" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="FontFile" uid="uid://b5apgcy56mli5" path="res://Assets/Fonts/Jersey_10/Jersey10-Regular.ttf" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://cpxubukdolyim" path="res://Assets/Images/SigmaDungeon.jpg" id="3_8saeu"]
+[ext_resource type="PackedScene" uid="uid://b2b5rlm8xefhw" path="res://Scenes/FadeTransition.tscn" id="4_ghw46"]
+
+[node name="MainMenu" type="Node2D" unique_id=1115188320]
+script = ExtResource("1_tt5f1")
+
+[node name="SigmaDungeon" type="Sprite2D" parent="." unique_id=1736306715]
+position = Vector2(576, 323)
+scale = Vector2(0.48, 0.4821959)
+texture = ExtResource("3_8saeu")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=1262008151]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="ButtonManager" unique_id=1631215526]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 331.0
+offset_right = 1063.0
+offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("2_853f1")
+theme_override_font_sizes/font_size = 30
+text = "New Game"
+
+[node name="Options" type="Button" parent="ButtonManager" unique_id=419464712]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 431.0
+offset_right = 1063.0
+offset_bottom = 502.0
+theme_override_fonts/font = ExtResource("2_853f1")
+theme_override_font_sizes/font_size = 30
+text = "Options"
+
+[node name="Quit" type="Button" parent="ButtonManager" unique_id=585569641]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 531.0
+offset_right = 1063.0
+offset_bottom = 602.0
+theme_override_fonts/font = ExtResource("2_853f1")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=62226718]
+offset_left = 67.0
+offset_top = 120.0
+offset_right = 670.0
+offset_bottom = 255.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_853f1")
+theme_override_font_sizes/font_size = 125
+text = "SkeleDungeon"
+
+[node name="FadeTransition" parent="." unique_id=1862422594 instance=ExtResource("4_ghw46")]
+visible = false
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 650.0
+
+[node name="Timer" type="Timer" parent="FadeTransition" unique_id=965821493]
+
+[connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="FadeTransition/Timer" to="." method="_on_timer_timeout"]
