@@ -1,3 +1,13 @@
 extends Node2D
 
-@export var node_type : String
+var node_type = ""
+var connected = false
+var unlocked = false
+var next_nodes = []
+
+func _ready():
+	$Button.disabled = true
+
+func unlock():
+	unlocked = true
+	$Button.disabled = false

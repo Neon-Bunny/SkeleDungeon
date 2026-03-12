@@ -1,15 +1,9 @@
 [gd_scene format=3 uid="uid://nu6drmqrwqgf"]
 
 [ext_resource type="Script" uid="uid://bun8yflhfyyp" path="res://Scripts/game_map.gd" id="1_jbw0w"]
-[ext_resource type="Texture2D" uid="uid://cpxubukdolyim" path="res://Assets/Images/SigmaDungeon.jpg" id="2_8wm8v"]
 
 [node name="GameMap" type="Node2D" unique_id=1346938753]
 script = ExtResource("1_jbw0w")
-
-[node name="SigmaDungeon" type="Sprite2D" parent="." unique_id=1058157396]
-position = Vector2(576, 323)
-scale = Vector2(0.48, 0.4821959)
-texture = ExtResource("2_8wm8v")
 
 [node name="Nodes" type="Node" parent="." unique_id=1167868083]
 

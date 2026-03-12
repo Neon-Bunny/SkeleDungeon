@@ -6,13 +6,18 @@
 script = ExtResource("1_wp7i3")
 
 [node name="Button" type="Button" parent="." unique_id=2052964384]
-offset_right = 54.0
-offset_bottom = 52.0
+offset_left = -27.0
+offset_top = -26.0
+offset_right = 27.0
+offset_bottom = 26.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=1667671122]
-offset_top = 29.0
-offset_right = 53.0
-offset_bottom = 52.0
+offset_left = -26.0
+offset_top = 6.0
+offset_right = 27.0
+offset_bottom = 29.0
 text = "Node"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
