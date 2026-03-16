@@ -18,10 +18,10 @@ func _ready():
 
 func assign_start_and_boss():
 
-	var middle = rows / 2
+	var middle_row = rows / 2
 
-	var start = map_nodes[middle][0]
-	var boss = map_nodes[middle][columns - 1]
+	var start = map_nodes[middle_row][0]
+	var boss = map_nodes[middle_row][columns - 1]
 
 	start.node_type = "Start"
 	boss.node_type = "Boss"
@@ -29,6 +29,11 @@ func assign_start_and_boss():
 	start.connected = true
 	start.unlock()
 	boss.connected = true
+	
+	for i in range(0, rows - 1):
+		var node = map_nodes[i][columns - 1]
+		if node.node_type != "Boss":
+			node.queue_free()
 
 func generate_nodes():
 	for y in range(rows):
@@ -47,17 +52,23 @@ func generate_nodes():
 
 func generate_paths():
 	var path_count = 4
-	var start_row = rows / 2
+	var middle_row = rows / 2
 	
 	for i in range(path_count):
-		var y = start_row
-		for x in range(columns - 1):
+		var y = middle_row
+		for x in range(columns - 2):
 			var current = map_nodes[y][x]
 			var shift = randi_range(-1, 1)
 			var next_y = clamp(y + shift, 0, rows - 1)
 			var next = map_nodes[next_y][x + 1]
 			connect_nodes(current, next)
 			y = next_y
+		
+		var boss = map_nodes[middle_row][columns - 1]
+		for j in range(rows):
+			var node_a = map_nodes[j][columns - 2]
+			if node_a.connected == true:
+				connect_nodes(node_a, boss)
 
 func connect_nodes(a, b):
 	a.connected = true
