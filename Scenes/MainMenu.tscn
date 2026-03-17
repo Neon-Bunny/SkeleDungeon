@@ -27,7 +27,7 @@ offset_right = 1063.0
 offset_bottom = 402.0
 theme_override_fonts/font = ExtResource("2_853f1")
 theme_override_font_sizes/font_size = 30
-text = "New Game"
+text = "Start Game"
 
 [node name="Options" type="Button" parent="ButtonManager" unique_id=419464712]
 layout_mode = 0

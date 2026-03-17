@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MusicManager="*uid://bltiblal2wo7e"
+GameState="*uid://ch6cjypvhhr46"
 
 [physics]
 
